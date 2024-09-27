@@ -229,7 +229,9 @@ return [
         */
 
         'hidden' => [
-            '*secret*', '*password', '*token',
+            '*secret*',
+            '*password',
+            '*token',
         ],
 
         /*
@@ -341,9 +343,7 @@ return [
         |     'billing_invoices' => 'Invoice',
         */
 
-        'model_names' => [
-
-        ],
+        'model_names' => [],
 
         /*
         |--------------------------------------------------------------------------
@@ -426,9 +426,7 @@ return [
         | You can enable pluralization for certain tables
         |
         */
-        'override_pluralize_for' => [
-
-        ],
+        'override_pluralize_for' => [],
 
         /*
         |--------------------------------------------------------------------------
