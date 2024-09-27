@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Service
- * 
+ *
  * @property int $id
  * @property int $merchant_id
  * @property string $name
@@ -20,34 +20,31 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $price
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
  * @property Merchant $merchant
  * @property Collection|Queue[] $queues
- *
- * @package App\Models
  */
 class Service extends Model
 {
-	protected $table = 'services';
+    protected $table = 'services';
 
-	protected $casts = [
-		'merchant_id' => 'int'
-	];
+    protected $casts = [
+        'merchant_id' => 'int',
+    ];
 
-	protected $fillable = [
-		'merchant_id',
-		'name',
-		'description',
-		'price'
-	];
+    protected $fillable = [
+        'merchant_id',
+        'name',
+        'description',
+        'price',
+    ];
 
-	public function merchant()
-	{
-		return $this->belongsTo(Merchant::class);
-	}
+    public function merchant()
+    {
+        return $this->belongsTo(Merchant::class);
+    }
 
-	public function queues()
-	{
-		return $this->hasMany(Queue::class);
-	}
+    public function queues()
+    {
+        return $this->hasMany(Queue::class);
+    }
 }
